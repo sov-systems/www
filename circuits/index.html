@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sovereign Circuits</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Sovereign Circuits — experimental audiovisual & systems art. Resilience, autonomy, deep listening. 1/4 of RM23." />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #000000;
+      --fg: #f5f5f5;
+      --muted: #aaaaaa;
+      --accent: #ffffff;
+      --border: #333333;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111111 0, #000000 55%, #000000 100%);
+      color: var(--fg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .frame {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 28px;
+      max-width: 520px;
+      width: calc(100% - 32px);
+      margin: 16px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.04), transparent 45%),
+        radial-gradient(circle at bottom, rgba(255, 255, 255, 0.03), transparent 55%);
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.02),
+        0 18px 40px rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+    }
+
+    header {
+      margin-bottom: 28px;
+    }
+
+    .mark {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--muted);
+      margin-bottom: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .mark::before,
+    .mark::after {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border));
+    }
+
+    .mark::after {
+      background: linear-gradient(to left, transparent, var(--border));
+    }
+
+    h1 {
+      font-size: 30px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .sub {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .sub strong {
+      font-weight: 600;
+      color: var(--fg);
+    }
+
+    .links {
+      margin-top: 28px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .link-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-radius: 999px;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      transition:
+        border-color 0.18s ease-out,
+        background-color 0.18s ease-out,
+        transform 0.18s ease-out,
+        box-shadow 0.18s ease-out;
+    }
+
+    .link-main {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .value {
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .link-row a {
+      text-decoration: none;
+      color: inherit;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      padding: 7px 12px 6px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.02);
+      transition:
+        background-color 0.18s ease-out,
+        color 0.18s ease-out,
+        border-color 0.18s ease-out;
+    }
+
+    .link-row:hover {
+      border-color: var(--accent);
+      background: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 0.08),
+        transparent 70%
+      );
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.9);
+    }
+
+    .link-row:hover a {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #000000;
+    }
+
+    footer {
+      margin-top: 26px;
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .dot {
+      font-size: 9px;
+      margin: 0 4px;
+    }
+
+    @media (max-width: 480px) {
+      .frame {
+        padding: 24px 18px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .link-row {
+        padding-inline: 10px;
+      }
+
+      .link-row a {
+        letter-spacing: 0.12em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <header>
+      <div class="mark">Sovereign Circuits</div>
+      <h1>Sovereign Circuits</h1>
+      <p class="sub">
+        Experimental audiovisual &amp; systems art.<br />
+        <strong>Resilience, autonomy, deep listening.</strong><br />
+        1/4 of RM23 (<span>@rm23-uk</span>).
+      </p>
+    </header>
+
+    <main>
+      <section class="links" aria-label="External links">
+        <div class="link-row">
+          <div class="link-main">
+            <span class="label">Signal</span>
+            <span class="value">@sovereign.circuits</span>
+          </div>
+          <a href="https://www.instagram.com/sovereign.circuits/" target="_blank" rel="noopener noreferrer">
+            Instagram
+          </a>
+        </div>
+
+        <div class="link-row">
+          <div class="link-main">
+            <span class="label">Streams</span>
+            <span class="value">soundcloud.com/sovereigncircuits</span>
+          </div>
+          <a href="https://soundcloud.com/sovereigncircuits" target="_blank" rel="noopener noreferrer">
+            SoundCloud
+          </a>
+        </div>
+
+        <div class="link-row">
+          <div class="link-main">
+            <span class="label">Archive</span>
+            <span class="value">sovereigncircuits.bandcamp.com</span>
+          </div>
+          <a href="https://sovereigncircuits.bandcamp.com/" target="_blank" rel="noopener noreferrer">
+            Bandcamp
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>experimental audiovisual &amp; systems art</span>
+      <span>
+        <span class="dot">●</span>
+        london &amp; elsewhere
+      </span>
+    </footer>
+  </div>
+</body>
+</html>
